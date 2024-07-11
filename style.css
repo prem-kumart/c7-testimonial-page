@@ -1,0 +1,233 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+:root {
+    /* Primary Colors */
+    --Moderate-violet: hsl(263, 55%, 52%);
+    --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --White : hsl(0,0%,100%);
+    /* Neutral Colors */
+    --Light-gray: hsl(0, 0%, 81%);
+    --Light-grayish-blue: hsl(210, 46%, 95%);
+
+    /*fonts */
+    --Barlow-Semi-Condensed : "Barlow Semi Condensed" ,sans-serif;
+
+    /*font weights */
+
+    --fw-Medium : 500;
+    --fw-SemiBold : 600;
+
+}
+
+
+
+/* CSS Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+* {
+   margin: 0;
+}
+
+html{
+  height: 100%;
+}
+
+/* Media defaults */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+
+/* Typography reset */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+
+body {
+    font-family: var(--Barlow-Semi-Condensed);
+    background-color: var(--Light-grayish-blue);
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+   /* padding:2rem; */
+    margin: 10rem;
+    max-width: 20.5rem;
+}
+
+.testimonial-card {
+     position : relative;
+     display: flex;
+     flex-direction: column;
+  /*   max-width: 20.5rem ; */
+      padding: 2rem;
+     gap: 1rem;
+     border-radius: 0.5rem;
+     
+}
+
+/* Person Information */
+.testimonial-card .person-info {
+   display: flex; 
+   gap: 1rem;
+}
+
+.person-name {
+    display: flex;
+    flex-direction: column;
+}
+.person-info img{
+    border-radius: 100%;
+
+}
+
+.person-info h2 {
+  font-size: 13px;
+  font-weight: var(--fw-Medium);
+}
+
+.person-info p {
+  font-size: 11px;
+  opacity: 50%;
+}
+
+
+.testimonial-card img{
+     max-width: 1.75rem;
+
+}
+
+.testimonial-card p {
+    opacity: 70%;
+}
+
+
+/*-- end -- */
+
+
+
+
+.testimonial-card figure {
+    align-self: end;
+    position: absolute;
+    top: 0;
+    right: 1.5rem;
+    z-index:1;
+}
+
+.testimonial-card figure img {
+    max-width: 6.5rem;
+}
+
+.violet h3{
+    z-index: 2;
+}
+
+.testimonial-card h3 {
+    font-size: 1.25rem;
+    font-weight: var(--fw-SemiBold);
+}
+
+.violet h3 {
+    padding-bottom: 2.5rem;
+}
+
+
+
+
+.violet {
+  
+  color: var(--White);
+  background-color: var(--Moderate-violet);
+}
+
+.gray {
+  color: var(--White);
+  background-color: var(--Very-dark-grayish-blue);
+}
+
+.blackish-blue {
+ color: var(--White);
+ background-color: var(--Very-dark-blackish-blue);
+}
+
+
+.white-small, .white-big {
+ color: var(--Very-dark-grayish-blue);
+ background-color: var(--White);
+}
+
+
+@media only screen and (min-width:1110px) {
+    main{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr  1fr ;
+        grid-gap: 1.5rem;
+        grid-template-areas: 
+                "violet-area violet-area  gray-area    white-big "
+                "white-small brakish     brakish       white-big";
+        max-width: 1110px;
+        max-height: 572px;
+        justify-items: stretch;
+    }
+
+    .testimonial-card figure {
+        right: 5rem;
+     
+    }
+
+
+    .violet h3 {
+      padding-bottom: 0;
+    }
+    .violet {
+         
+          grid-area: violet-area;
+      }
+      
+      .gray {
+        grid-area: gray-area;
+      }
+      
+      .blackish-blue {
+        grid-area: brakish;
+      }
+      
+      .white-small {
+        grid-area:white-small ;
+      }
+
+      .white-big {
+        grid-area: white-big;
+      }
+
+      .white-big h3{
+        padding-bottom: 1.5rem;
+         
+    }
+}
