@@ -103,6 +103,7 @@ main {
 }
 .person-info img{
     border-radius: 100%;
+   
 
 }
 
@@ -157,8 +158,13 @@ main {
     padding-bottom: 2.5rem;
 }
 
+.violet .person-info img {
+    border: 1px solid var(--Light-gray)
+}
 
-
+.blackish-blue .person-info img {
+    border: 1px solid var(--Moderate-violet);
+}
 
 .violet {
   
